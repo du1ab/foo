@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://du1ab.github.io/foo/</id>
+    <id>https://github.com/du1ab/foo</id>
     <title>Gridea</title>
-    <updated>2021-05-29T01:27:57.063Z</updated>
+    <updated>2021-05-29T01:47:14.006Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://du1ab.github.io/foo/"/>
-    <link rel="self" href="https://du1ab.github.io/foo/atom.xml"/>
+    <link rel="alternate" href="https://github.com/du1ab/foo"/>
+    <link rel="self" href="https://github.com/du1ab/foo/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://du1ab.github.io/foo/images/avatar.png</logo>
-    <icon>https://du1ab.github.io/foo/favicon.ico</icon>
+    <logo>https://github.com/du1ab/foo/images/avatar.png</logo>
+    <icon>https://github.com/du1ab/foo/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[如何面对生活中的烦扰？- 法心尊者答疑 第176问]]></title>
-        <id>https://du1ab.github.io/foo/post/ru-he-mian-dui-sheng-huo-zhong-de-fan-rao-fa-xin-zun-zhe-da-yi-di-176-wen/</id>
-        <link href="https://du1ab.github.io/foo/post/ru-he-mian-dui-sheng-huo-zhong-de-fan-rao-fa-xin-zun-zhe-da-yi-di-176-wen/">
+        <id>https://github.com/du1ab/foo/post/ru-he-mian-dui-sheng-huo-zhong-de-fan-rao-fa-xin-zun-zhe-da-yi-di-176-wen/</id>
+        <link href="https://github.com/du1ab/foo/post/ru-he-mian-dui-sheng-huo-zhong-de-fan-rao-fa-xin-zun-zhe-da-yi-di-176-wen/">
         </link>
         <updated>2021-05-29T00:18:25.000Z</updated>
         <content type="html"><![CDATA[<h2 id="问">问</h2>
@@ -38,8 +38,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://du1ab.github.io/foo/post/hello-gridea/</id>
-        <link href="https://du1ab.github.io/foo/post/hello-gridea/">
+        <id>https://github.com/du1ab/foo/post/hello-gridea/</id>
+        <link href="https://github.com/du1ab/foo/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
