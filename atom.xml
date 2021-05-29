@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://foo.du1ab.one</id>
-    <title>遥望佛陀正当年</title>
-    <updated>2021-05-29T04:41:24.399Z</updated>
+    <title>法心尊者</title>
+    <updated>2021-05-29T04:45:54.453Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://foo.du1ab.one"/>
     <link rel="self" href="https://foo.du1ab.one/atom.xml"/>
     <subtitle>时隔2600年，没人能保证佛经的每一句话都是佛陀所说</subtitle>
     <logo>https://foo.du1ab.one/images/avatar.png</logo>
     <icon>https://foo.du1ab.one/favicon.ico</icon>
-    <rights>All rights reserved 2021, 遥望佛陀正当年</rights>
+    <rights>All rights reserved 2021, 法心尊者</rights>
     <entry>
         <title type="html"><![CDATA[如何面对生活中的烦扰？- 法心尊者答疑 第176问]]></title>
         <id>https://foo.du1ab.one/post/ru-he-mian-dui-sheng-huo-zhong-de-fan-rao-fa-xin-zun-zhe-da-yi-di-176-wen/</id>
