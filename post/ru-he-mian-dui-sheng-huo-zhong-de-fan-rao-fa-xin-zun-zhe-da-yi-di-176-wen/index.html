@@ -8,7 +8,7 @@
 <meta name="keywords" content="">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="">
-<title>Gridea</title>
+<title>如何面对生活中的烦扰？- 法心尊者答疑 第176问 | Gridea</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1622248768200">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/pisces.css">
@@ -29,6 +29,8 @@
 
 
 
+  <meta name="description" content="如何面对生活中的烦扰？- 法心尊者答疑 第176问" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -60,7 +62,7 @@
           
             
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/" target="_self">
@@ -136,68 +138,98 @@
     <div
       class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
-<div class="sidebar-wrapper box-shadow-wrapper bg-color">
-  <div class="sidebar-item">
-    <img class="site-author-image right-motion" src="/images/avatar.png"/>
-    <p class="site-author-name"></p>
-    
-  </div>
-  <div class="sidebar-item side-item-stat right-motion">
-    <div class="sidebar-item-box">
-      <a href="/archives/">
         
-        <span class="site-item-stat-count">2</span>
-        <span class="site-item-stat-name">文章</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="">
-        <span class="site-item-stat-count">1</span>
-        <span class="site-item-stat-name">分类</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="/tags/">
-        <span class="site-item-stat-count">1</span>
-        <span class="site-item-stat-name">标签</span>
-      </a>
-    </div>
-  </div>
+
+<div class="sidebar">
   
-    
-      <div class="sidebar-item" style="border-top: 1px dotted #ccc; margin-top: 10px;">
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
       </div>
-    
+    </div>
   
-  
-
-  
-
-
-</div>
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = '';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-        <div class="section-box pisces">
-          <section class="section bg-color posts-expand slide-down-in">
-            
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <header class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://du1ab.github.io/foo/post/ru-he-mian-dui-sheng-huo-zhong-de-fan-rao-fa-xin-zun-zhe-da-yi-di-176-wen/">
       如何面对生活中的烦扰？- 法心尊者答疑 第176问
@@ -224,112 +256,62 @@
     
   </div>
 </header>
-      <div class="post-body">
-        
-        
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://du1ab.github.io/foo/post/ru-he-mian-dui-sheng-huo-zhong-de-fan-rao-fa-xin-zun-zhe-da-yi-di-176-wen/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
+            <div class="post-body next-md-body" id="post_body">
+              <h2 id="问">问</h2>
+<p>贤友问：</p>
+<p>礼敬尊者!</p>
+<p>我一直跟着尊者的禅修引导坐禅，今天有些不同体会，以前遇到严重纠缠骚扰时，我的处理方式是不去理会。<br>
+（今天）遇到同样骚扰我就开始了坐禅，感觉完全不能放松，特别紧绷，头痛......面对对方纠缠，我没法生起慈悲心，打坐妄念纷飞。<br>
+我的问题是：在坐上出现这样的紧绷感、沉重感，我尽量让自己放松再放松，用慈心来缓解，那在日常该如何处理这些深度影响我的事件？除了试着去觉知身心，放松胸口和肩部，还需要做哪些努力？<br>
+感恩尊者 ！</p>
+<h2 id="答">答</h2>
+<p>法心尊者答：</p>
+<p>这些外部事件当然会导致你烦恼的生起和增长，这也是出家修行的一个意义所在——就是尽可能地远离那些会导致我们起烦恼的外部因素。</p>
+<p><strong>佛陀在提到修行的一个目标的时候，他也说到“三依一向”</strong>。<em>第一向就是“依远离”，一个是（远离）外部的会导致你烦恼的种种因素（人也好、事物也好）；也包括（远离）内部的会导致你起烦恼的想法、或者不好的习惯以及不如理的作意等等。</em></p>
+<hr>
+<p>所以在禅修初期，面对这些一定会导致你生起烦恼的事物，类似于你说的这种事情的话，能远离尽量远离。如果实在远离不了，这个事情已经导致你长时间地生起烦恼的话，<strong>最有效的解决办法其实是每天花一段时间修慈心。</strong></p>
+<p>修慈心不是要针对这个事情修慈心，恰恰相反，你要<em>在这个事情没有影响到你或者你没有想到这个事情的时候，你去对一些相对中立的目标去修慈心</em>。每天花半小时到一小时的时间去培育慈心，会让你的心在日常生活中变得更平稳、更柔软，这样你也能以一个更好的心态去面对这些不好的事情。</p>
+<p><strong>当然放松也是很重要的</strong>。其实对于还没有证得禅那的初学者来说，慈心以及日常的放松就已经可以解决日常遇到的绝大多数粗重的问题了，这个是内部的。<strong>外部的也就是律的方面</strong>——<em>就是尽可能地去远离这些逆缘，（远离）会导致你烦恼增长的这些因素，以及去克制你自己的言行</em>。因为你自己的言行也会导致你烦恼的生起和增长。</p>
+<hr>
+<p><strong>所以修行一定是既要治标又要治本。从外部要去对治它，从内部要去根除它，这两个方面都要去兼顾</strong>。并不是说我只是靠禅修来净化我的心，我就可以很好地去面对这些粗重的问题了。你如果已经修到很高的程度了，自然是可以的。</p>
+<p>但是在初级阶段，就像我们养花一样，在花还是幼苗时，你可能就是需要把它养在温室里面。当它长到一定程度的时候，你再让它去外面经受风吹雨打，它才能更好地去面对这些事情。如果当它还处在幼苗期时，你就让它去经受这种很严厉的外境，那它很有可能就会直接死掉了，没有办法很好地成长。</p>
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://du1ab.github.io/foo/post/hello-gridea/">
-      Hello Gridea
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2018-12-12</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
+            </div>
+            <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
       
-      
-      <a href="https://du1ab.github.io/foo/tag/AfN_ufuZE/">
-        <span>Gridea</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>299<span class="pc-show">字数</span></span>
-    </span>
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://du1ab.github.io/foo/post/ru-he-mian-dui-sheng-huo-zhong-de-fan-rao-fa-xin-zun-zhe-da-yi-di-176-wen/" title="如何面对生活中的烦扰？- 法心尊者答疑 第176问">https://du1ab.github.io/foo/post/ru-he-mian-dui-sheng-huo-zhong-de-fan-rao-fa-xin-zun-zhe-da-yi-di-176-wen/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
     
   </div>
-</header>
-      <div class="post-body">
-        
-        
-          <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意...<br>
-...<br>
-123456</p>
-
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://du1ab.github.io/foo/post/hello-gridea/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
+  <div class="nav">
+    <div class="nav-prev">
       
     </div>
-  </article>
-  
-            
-            
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-    
+    <div class="nav-next">
       
-        <li class="pagination-li pagination-active">
-            <a href="/page/../">
-              1
-            </a>
-        </li>
+        <a class="nav-pc-next" title="Hello Gridea" href="https://du1ab.github.io/foo/post/hello-gridea/">Hello Gridea</a>
+        <a class="nav-mobile-next" title="Hello Gridea" href="https://du1ab.github.io/foo/post/hello-gridea/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
-    
-    
-  </ul>
+    </div>
+  </div>
 </div>
-          </section>
+            
+  
+
+          </div>
         </div>
       </div>
     </div>
@@ -732,7 +714,6 @@
   escapeMap.set('&quot;', '"');
   escapeMap.set('&amp;', '&');
 </script> -->
-
 
 
 </html>
